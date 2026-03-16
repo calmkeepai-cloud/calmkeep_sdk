@@ -1,0 +1,13 @@
+[project]
+name = "calmkeep"
+version = "0.1.0"
+description = "Calmkeep runtime client for Claude"
+authors = [{name = "Calmkeep"}]
+readme = "README.md"
+dependencies = [
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
