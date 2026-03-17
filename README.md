@@ -40,7 +40,7 @@ Initialize the client with your keys:
 ```python
 client = CalmkeepClient(
     calmkeep_key="YOUR_CALMKEEP_SUBSCRIPTION_KEY",
-    claude_key="YOUR_ANTHROPIC_API_KEY"
+    anthropic_key="YOUR_ANTHROPIC_API_KEY"
 )
 ```
 
