@@ -21,7 +21,7 @@ class CalmkeepClient:
             raise CalmkeepError("Missing Calmkeep API key")
 
         if not claude_key:
-            raise CalmkeepError("Missing Claude API key")
+            raise CalmkeepError("Missing ANTHROPIC API key")
 
         self.calmkeep_key = calmkeep_key
         self.claude_key = claude_key
@@ -41,7 +41,7 @@ class CalmkeepClient:
 
         headers = {
             "calmkeep_key": self.calmkeep_key,
-            "anthropic_api_key": self.claude_key
+            "anthropic_api_key": self.anthropic_key
         }
 
         url = f"{self.base_url}/runtime"
@@ -91,7 +91,7 @@ class CalmkeepClient:
 
         headers = {
             "calmkeep_key": self.calmkeep_key,
-            "anthropic_api_key": self.claude_key
+            "anthropic_api_key": self.anthropic_key
         }
 
         url = f"{self.base_url}/runtime"
