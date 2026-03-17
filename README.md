@@ -40,7 +40,7 @@ Initialize the client with your keys:
 ```python
 client = CalmkeepClient(
     calmkeep_key="YOUR_CALMKEEP_SUBSCRIPTION_KEY",
-    claude_key="YOUR_CLAUDE_API_KEY"
+    claude_key="YOUR_ANTHROPIC_API_KEY"
 )
 ```
 
@@ -67,7 +67,7 @@ Your Application
       ↓
 Calmkeep Runtime
       ↓
-Claude API
+ANTHROPIC API
       ↓
 Structured Response
 ```
@@ -76,7 +76,7 @@ The runtime introduces a continuity layer that stabilizes reasoning across exten
 
 Key properties:
 
-• Bring your own Claude API key
+• Bring your own Anthropic API key
 • Claude billing remains directly with Anthropic
 • Calmkeep does not resell tokens
 • No modification of model weights
@@ -98,7 +98,7 @@ Example:
 ck_xxxxxxxxxxxxxxxxx
 ```
 
-### Claude API Key
+### Anthropic API Key
 
 Your existing Anthropic API key.
 
@@ -119,7 +119,7 @@ from calmkeep import CalmkeepClient
 
 client = CalmkeepClient(
     calmkeep_key="ck_example",
-    claude_key="sk-ant-example"
+    anthropic_key="sk-ant-example"
 )
 
 response = client.complete(
@@ -166,7 +166,7 @@ Create a `.env` file:
 ```
 CALMKEEP_URL=https://your-calmkeep-runtime.modal.run
 CALMKEEP_API_KEY=your_calmkeep_subscription_key
-ANTHROPIC_API_KEY=your_claude_api_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
 ```
 
 ---
@@ -208,7 +208,7 @@ After installation configure keys:
 
 ```
 export CALMKEEP_API_KEY=YOUR_CALMKEEP_SUBSCRIPTION_KEY
-export CLAUDE_API_KEY=YOUR_CLAUDE_API_KEY
+export ANTHROPIC_API_KEY=YOUR_ANTHROPIC_API_KEY
 ```
 
 Claude Code requests will then route through the Calmkeep runtime.
@@ -233,7 +233,7 @@ import os
 
 client = CalmkeepClient(
     calmkeep_key=os.getenv("CALMKEEP_API_KEY"),
-    claude_key=os.getenv("ANTHROPIC_API_KEY")
+    anthropic_key=os.getenv("ANTHROPIC_API_KEY")
 )
 ```
 
@@ -247,7 +247,7 @@ OpenClaw workflows can integrate Calmkeep through environment variables.
 
 ```
 export CALMKEEP_API_KEY=your_key
-export ANTHROPIC_API_KEY=your_claude_key
+export ANTHROPIC_API_KEY=your_anthropic_key
 ```
 
 Then call the Calmkeep client inside your workflow scripts.
@@ -262,10 +262,10 @@ Then call the Calmkeep client inside your workflow scripts.
 export CALMKEEP_API_KEY=your_key
 ```
 
-### Claude API key not configured
+### ANTHROPIC API key not configured
 
 ```
-export ANTHROPIC_API_KEY=your_claude_key
+export ANTHROPIC_API_KEY=your_anthropic_key
 ```
 
 Ensure both keys are available to your environment before running Calmkeep.
